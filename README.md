@@ -1,27 +1,6 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version  
-`2.6.3`
-
-* System dependencies
-
-* Configuration
-
-* Database creation  
-`rails db:create`
-
-* Database initialization  
-`rails db:seed`
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 注意点
+- cloneする前に、forkしたかどうかを確認しましょう。
+- pushする前に、作業ブランチをcheckoutしているかを確認しましょう。
+- PRを作成する際は、forkしたリポジトリに対して作成できているかを確認しましょう。
+- 課題に記載されている注意事項は、漏れなく確認しましょう。
+- 現場でも「よく読んでいなかった」から適当に作業するつもりですか？？
