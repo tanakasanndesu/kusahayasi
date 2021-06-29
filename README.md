@@ -8,8 +8,7 @@
 ```
 
 ## 環境構築
-1. 下記のリポジトリをfork
-https://github.com/runteq/rspec_app_exam
+1. リポジトリをfork
 2. `git clone`して`cd rspec_app_exam`で移動
 3. 修正用ブランチを`git checkout fix_testcode`で作成
 4. specファイルを修正して、テスト実行
