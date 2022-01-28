@@ -10,7 +10,7 @@
 ## 環境構築
 1. リポジトリをfork
 2. `git clone`して`cd rspec_app_exam`で移動
-3. 修正用ブランチを`git checkout fix_testcode`で作成
+3. 修正用ブランチを`git checkout -b fix_testcode`で作成
 4. specファイルを修正して、テスト実行
 実行コマンド `rspec spec/system/task_spec.rb`
 
