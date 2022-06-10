@@ -8,7 +8,7 @@ RSpec.describe 'Task', type: :system do
         project = FactoryBot.create(:project)
         task = FactoryBot.create(:task, project_id: project.id)
         visit project_tasks_path(project)
-        expect(page).to have_content task.title
+        expect(find('.task_list')).to have_content task.title
         expect(Task.count).to eq 1
         expect(current_path).to eq project_tasks_path(project)
       end
@@ -19,7 +19,7 @@ RSpec.describe 'Task', type: :system do
         task = FactoryBot.create(:task, project_id: project.id)
         visit project_path(project)
         click_link 'View Todos'
-        expect(page).to have_content task.title
+        expect(find('.task_list')).to have_content task.title
         expect(Task.count).to eq 1
         expect(current_path).to eq project_tasks_path(project)
       end
