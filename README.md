@@ -12,13 +12,8 @@
 2. `git clone`して`cd rspec_app_exam`で移動
 3. 修正用ブランチを`git checkout -b fix_testcode`で作成
 4. specファイルを修正して、テスト実行
-実行コマンド `rspec spec/system/task_spec.rb`
 
 ## 備考
-・`spec/support/driver_setting.rb` にspec実行時のブラウザON/OFFの切替設定があります。
-`driven_by(:selenium_chrome_headless)` をコメントアウトし、
-`driven_by(:selenium_chrome)` のコメントを外すことでspec実行時にブラウザが起動します。
-
 ・失敗するテストケースは実行時にPendingになるよう`xit`にしています。`xit`を`it`に変更してテストコードを修正してください。
 
 ・`it`を`fit`にするとspec実行時にそのテストケースのみ実行するようfocusしてくれます。またspecファイルでは`byebug`も使用できます。
@@ -39,14 +34,11 @@
 ・テスト失敗時には`tmp/screenshots`フォルダ以下に画面キャプチャが保存され、確認することが出来ます。（このフォルダは`git ignore`されています。）
 
 ## 進め方の注意
-・修正の際には、適切な単位でコミットを分け（細かければ良いと言う訳ではないです）、コミットメッセージは以下のURLを参考にしてください。
+- 修正の際には、適切な単位でコミットを分ける練習をしてみましょう！コミットメッセージは以下のURLを参考にしてください！
 https://www.tam-tam.co.jp/tipsnote/program/post16686.html
-
-・PRの概要には、レビュアーに対してどんな情報を伝えるべきかを考えて記載しましょう。
 
 # 注意点
 - cloneする前に、forkしたかどうかを確認しましょう。
 - pushする前に、作業ブランチをcheckoutしているかを確認しましょう。
 - PRを作成する際は、forkしたリポジトリに対してPRを作成できているかを確認しましょう。
 - 課題に記載されている注意事項は、漏れなく確認しましょう。
-- （確認を怠る人に対して）現場でも「よく読んでいなかった」から適当に作業するつもりですか？？
