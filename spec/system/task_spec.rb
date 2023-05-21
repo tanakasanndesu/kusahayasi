@@ -33,7 +33,7 @@ RSpec.describe 'Task', type: :system do
         project = FactoryBot.create(:project)
         visit project_tasks_path(project)
         click_link 'New Task'
-        fill_in 'Title', with: 'test'
+        fill_in 'Title', with: 'create'
         click_button 'Create Task'
         expect(page).to have_content('Task was successfully created.')
         expect(Task.count).to eq 1

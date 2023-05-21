@@ -23,12 +23,12 @@ RSpec.describe 'Project', type: :system do
       it 'Projectが新規作成されること' do
         visit projects_path
         click_on 'New Project'
-        fill_in 'Name', with: 'test'
+        fill_in 'Name', with: 'create'
         select 'doing', from: 'Status'
         fill_in 'Release date', with: Date.new(2019, 01, 01)
         click_on 'Create Project'
         expect(page).to have_content 'Project was successfully created'
-        expect(page).to have_content 'test'
+        expect(page).to have_content 'create'
         expect(page).to have_content 'doing'
         expect(page).to have_content Date.new(2019, 01, 01)
         expect(Project.count).to eq 1
