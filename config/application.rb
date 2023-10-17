@@ -22,7 +22,7 @@ module V3BasicRailsBasic
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
-
+  
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -33,5 +33,12 @@ module V3BasicRailsBasic
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    
+    config.generators do |g|
+      g.assets false    # <= css,javascriptファイルを作成しない
+      g.helper false    # <= helperファイルを作成しない
+      g.test_framework false  # <= テストファイルを作成しない
+      g.skip_routes true  # <= routes.rbを変更しない
+    end
   end
 end
