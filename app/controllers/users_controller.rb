@@ -8,9 +8,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      flash[:success] = t('.user_success')
       redirect_to root_path
     else
-      render :new
+      flash[:danger] = t('.user_danger')
+      render :new, status: :unprocessable_entity
     end
   end
 
