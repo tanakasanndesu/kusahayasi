@@ -15,6 +15,7 @@ class UsersController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+  
 
   private
 
