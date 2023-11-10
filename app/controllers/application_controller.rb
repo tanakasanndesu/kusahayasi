@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
 
   def not_authenticated
     redirect_to login_path
-    flash[:danger] = 'ログインしてください'
+    flash[:danger] = t('flash.danger')
   end
 end

@@ -36,3 +36,5 @@ ja:
   boards:
     index:
       no_boards: 掲示板がありません
+  flash:
+    danger: ログインしてください
