@@ -41,3 +41,9 @@ ja:
       no_create_board: 掲示板を作成出来ませんでした
   flash:
     danger: ログインしてください
+  activerecord:
+      attributes:
+        board:
+          title: タイトル
+          body: 本文
+  

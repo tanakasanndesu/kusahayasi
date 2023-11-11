@@ -4,6 +4,7 @@
       <h1>掲示板作成</h1>
       <!-- ここからform_withを使う形に修正してください -->
       <%= form_with model: @board, local: true do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
       <form class="new_board">
         <div class="mb-3">
           <!-- form.htmlタグ名 :カラム名 -->
