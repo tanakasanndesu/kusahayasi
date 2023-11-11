@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <h1>掲示板作成</h1>
+      <!-- ここからform_withを使う形に修正してください -->
+      <%= form_with model: @board, local: true do |f| %>
+      <form class="new_board">
+        <div class="mb-3">
+          <!-- form.htmlタグ名 :カラム名 -->
+          <%= f.label :title, "タイトル" %>
+          <%= f.text_field :title, class: "form-control" %>
+        </div>
+        <div class="mb-3">
+          <%= f.label :body, "本文" %>
+          <%= f.text_area :body, class: "form-control"%>
+        </div>
+          <%= f.submit "登録", class: "btn btn-primary"%>
+      </form>
+      <% end %>
+      <!-- ここまでform_withを使う形に修正してください -->
+    </div>
+  </div>
+</div>

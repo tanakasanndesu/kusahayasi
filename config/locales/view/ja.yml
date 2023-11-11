@@ -36,5 +36,8 @@ ja:
   boards:
     index:
       no_boards: 掲示板がありません
+    create:
+      create_board: 掲示板を作成しました
+      no_create_board: 掲示板を作成出来ませんでした
   flash:
     danger: ログインしてください
