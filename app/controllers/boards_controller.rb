@@ -26,6 +26,6 @@ class BoardsController < ApplicationController
   # params.require(:〇〇)permit(:〇〇)は、情報取得する.必要(モデル).許可(カラム)
 
   def board_params
-    params.require(:board).permit(:title, :body)
+    params.require(:board).permit(:title, :body, :board_image, :board_image_cache)
   end
 end
