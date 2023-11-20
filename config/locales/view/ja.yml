@@ -36,15 +36,14 @@ ja:
   boards:
     index:
       no_boards: 掲示板がありません
-    create:
-      create_board: 掲示板を作成しました
-      no_create_board: 掲示板を作成出来ませんでした
+    show:
+      create_comment : コメントを作成しました
+      no_create_comment : コメントを作成出来ませんでした
   flash:
     danger: ログインしてください
-  activerecord:
-      attributes:
-        board:
-          title: タイトル
-          body: 本文
-          board_image: サムネイル
+  defaults:
+    post: 投稿
+    flash_message:
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成出来ませんでした"
   

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :boards, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   authenticates_with_sorcery!
 
@@ -10,4 +11,9 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, presence: true
   validates :first_name, presence: true, length: { maximum: 255 }
   validates :last_name, presence: true, length: { maximum: 255 }
+
+  def own?(object)
+    self.id == object.user_id
+  end
+
 end

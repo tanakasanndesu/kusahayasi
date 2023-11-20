@@ -13,12 +13,19 @@ class BoardsController < ApplicationController
   def create
     @board = current_user.boards.build(board_params)
     if @board.save
-      flash[:success] = t('.create_board')
+      flash[:success] = t('defaults.flash_message.created', item: "掲示板" )
       redirect_to boards_path
     else
-      flash[:danger] = t('.no_create_board')
+      flash[:danger] = t('defaults.flash_message.not_created', item: "掲示板" )
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @board = Board.find(params[:id])
+    @comment = Comment.new
+    # @board に紐づくコメントデータを取得し、各コメントに紐づくユーザーデータも同時に取得する
+    @comments = @board.comments.includes(:user).order(created_at: :desc)
   end
 
   private
@@ -28,4 +35,5 @@ class BoardsController < ApplicationController
   def board_params
     params.require(:board).permit(:title, :body, :board_image, :board_image_cache)
   end
+
 end
