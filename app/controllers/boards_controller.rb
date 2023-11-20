@@ -13,10 +13,10 @@ class BoardsController < ApplicationController
   def create
     @board = current_user.boards.build(board_params)
     if @board.save
-      flash[:success] = t('defaults.flash_message.created', item: "掲示板" )
+      flash[:success] = t('defaults.flash_message.created', item: '掲示板')
       redirect_to boards_path
     else
-      flash[:danger] = t('defaults.flash_message.not_created', item: "掲示板" )
+      flash[:danger] = t('defaults.flash_message.not_created', item: '掲示板')
       render :new, status: :unprocessable_entity
     end
   end
@@ -35,5 +35,4 @@ class BoardsController < ApplicationController
   def board_params
     params.require(:board).permit(:title, :body, :board_image, :board_image_cache)
   end
-
 end
