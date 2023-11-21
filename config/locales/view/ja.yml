@@ -34,9 +34,13 @@ ja:
     bookmark_index: ブックマーク一覧
     profile: プロフィール
   boards:
+    new:
+      title: 掲示板作成
     index:
+      title: 掲示板一覧
       no_boards: 掲示板がありません
     show:
+      title: 掲示板詳細
       create_comment : コメントを作成しました
       no_create_comment : コメントを作成出来ませんでした
   flash:
@@ -46,4 +50,8 @@ ja:
     flash_message:
       created: "%{item}を作成しました"
       not_created: "%{item}を作成出来ませんでした"
+  layouts:
+      title: RUNTEQ BOARD APP
+
+  
   
