@@ -1,4 +1,5 @@
 class BoardsController < ApplicationController
+  before_action :set_board, only: %i[edit update destroy]
   def index
     # Boardモデルの全てのインスタンスを取得
     # 各Boardに関連するUserモデルの情報をプリロード
@@ -16,7 +17,7 @@ class BoardsController < ApplicationController
       flash[:success] = t('defaults.flash_message.created', item: '掲示板')
       redirect_to boards_path
     else
-      flash[:danger] = t('defaults.flash_message.not_created', item: '掲示板')
+      flash.now[:danger] = t('defaults.flash_message.not_created', item: '掲示板')
       render :new, status: :unprocessable_entity
     end
   end
@@ -28,9 +29,31 @@ class BoardsController < ApplicationController
     @comments = @board.comments.includes(:user).order(created_at: :desc)
   end
 
+  def edit; end
+
+  def update
+    if @board.update(board_params)
+      flash[:success] = t('.update_boards')
+      redirect_to board_path(@board)
+    else
+      flash.now[:danger] = t('.no_update_boards')
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @board.destroy!
+    redirect_to boards_path, status: :see_other
+    flash[:success] = t('.destroy_boards')
+  end
+
   private
 
   # params.require(:〇〇)permit(:〇〇)は、情報取得する.必要(モデル).許可(カラム)
+
+  def set_board
+    @board = current_user.boards.find(params[:id])
+  end
 
   def board_params
     params.require(:board).permit(:title, :body, :board_image, :board_image_cache)

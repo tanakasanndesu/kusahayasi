@@ -43,6 +43,11 @@ ja:
       title: 掲示板詳細
       create_comment : コメントを作成しました
       no_create_comment : コメントを作成出来ませんでした
+    update:
+      update_boards: 掲示板を更新しました
+      no_update_boards: 掲示板を更新出来ませんでした
+    destroy:
+      destroy_boards: 掲示板を削除しました
   flash:
     danger: ログインしてください
   defaults:
@@ -50,8 +55,6 @@ ja:
     flash_message:
       created: "%{item}を作成しました"
       not_created: "%{item}を作成出来ませんでした"
-  layouts:
-      title: RUNTEQ BOARD APP
 
   
   
