@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_many :boards, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
+  has_many :bookmarks_boards, through: :bookmarks, source: :board
 
   authenticates_with_sorcery!
 
@@ -14,5 +16,20 @@ class User < ApplicationRecord
 
   def own?(object)
     id == object.user_id
+  end
+
+  # お気に入り追加
+  # <<で引数で渡した掲示板の情報がbookmark_boardsに入っている
+  def bookmark(board)
+    bookmarks_boards << board
+  end
+
+  def unbookmark(board)
+    bookmarks_boards.destroy(board)
+  end
+
+  # お気に入り登録しているか判定するメソッド
+  def bookmark?(board)
+    bookmarks_boards.include?(board)
   end
 end

@@ -48,13 +48,21 @@ ja:
       no_update_boards: 掲示板を更新出来ませんでした
     destroy:
       destroy_boards: 掲示板を削除しました
+    edit:
+      title: 掲示板編集
   flash:
     danger: ログインしてください
   defaults:
     post: 投稿
+    reset: 更新
     flash_message:
       created: "%{item}を作成しました"
       not_created: "%{item}を作成出来ませんでした"
+  bookmarks:
+    create:
+      :create_bookmark: ブックマークしました。
+    destroy:
+      :destroy_bookmark: ブックマークを外しました。
 
   
   

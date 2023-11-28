@@ -47,6 +47,10 @@ class BoardsController < ApplicationController
     flash[:success] = t('.destroy_boards')
   end
 
+  def bookmarks
+    @bookmark_boards = current_user.bookmarks_boards.includes(:user).order(created_at: :desc)
+  end
+
   private
 
   # params.require(:〇〇)permit(:〇〇)は、情報取得する.必要(モデル).許可(カラム)

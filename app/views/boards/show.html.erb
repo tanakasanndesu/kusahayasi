@@ -17,7 +17,7 @@
                 <li class="list-inline-item"><%= l @board.created_at, format: :short %></li>
               </ul>
               <div class='d-flex justify-content-end'>
-              <%= render partial: "crud_menus", locals: { board: @board } if current_user.own?(@board) %>
+              <%= render "shared/crud_menus", { board: @board } if current_user.own?(@board) %>
               </div>
             </div>
           </div>

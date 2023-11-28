@@ -7,7 +7,14 @@
           <h4 class="card-title">
             <%= link_to board.title, board_path(board) %>
           </h4>
-          <%= render partial: "crud_menus", locals: { board: board } if current_user.own?(board) %>
+        </div>
+        <div class="d-flex justify-content-end">
+          <%= render "shared/crud_menus", { board: board } if current_user.own?(board) %>
+          <% if current_user.bookmark?(board) %>
+            <%= render 'unbookmark', { board: board } %>
+          <% else %>
+            <%= render 'bookmark', { board: board } %>
+          <% end %>
         </div>
         <ul class="list-inline">
           <li><i class="bi bi-person"></i><%= board.user.decorate.full_name %></li>

@@ -4,27 +4,7 @@
       <% content_for :title, t('.title') %>
       <h1><%= t('.title') %></h1>
       <!-- ここからform_withを使う形に修正してください -->
-      <%= form_with model: @board, local: true do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-      <form class="new_board">
-        <div class="mb-3">
-          <!-- form.htmlタグ名 :カラム名 -->
-          <%= f.label :title %>
-          <%= f.text_field :title, class: "form-control" %>
-        </div>
-        <div class="mb-3">
-          <%= f.label :body %>
-          <%= f.text_area :body, class: "form-control"%>
-        </div>
-        <div class="mb-3">
-          <%= f.label :board_image %>
-          <%= f.file_field :board_image, class: "form-control", accept: 'image/*' %>
-          <!-- アップロードに失敗した際もファイルが消えないようにするため -->
-          <%= f.hidden_field :board_image_cache %>
-        </div> 
-          <%= f.submit "登録", class: "btn btn-primary"%>
-      </form>
-      <% end %>
+      <%= render 'shared/form', board: @board %>
       <!-- ここまでform_withを使う形に修正してください -->
     </div>
   </div>
