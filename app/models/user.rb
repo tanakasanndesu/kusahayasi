@@ -22,10 +22,12 @@ class User < ApplicationRecord
   # <<で引数で渡した掲示板の情報がbookmark_boardsに入っている
   def bookmark(board)
     bookmarks_boards << board
+    # bookmarks.create(board_id: board.id)と同じような処理になります
   end
 
   def unbookmark(board)
     bookmarks_boards.destroy(board)
+    # bookmarks.destroy(bookmarks.find_by(board_id: board.id))と同じような処理になります
   end
 
   # お気に入り登録しているか判定するメソッド
