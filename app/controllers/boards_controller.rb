@@ -4,7 +4,7 @@ class BoardsController < ApplicationController
     # Boardモデルの全てのインスタンスを取得
     # 各Boardに関連するUserモデルの情報をプリロード
     # 作成日時(created_at)の降順で並べ替え
-    @boards = Board.all.includes(:user).page(params[:page]).per(20)
+    @boards = Board.all.includes(:user).page(params[:page])
   end
 
   def new
@@ -48,7 +48,7 @@ class BoardsController < ApplicationController
   end
 
   def bookmarks
-    @bookmark_boards = current_user.bookmarks_boards.includes(:user).order(created_at: :desc).page(params[:page]).per(20)
+    @bookmark_boards = current_user.bookmarks_boards.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   private
