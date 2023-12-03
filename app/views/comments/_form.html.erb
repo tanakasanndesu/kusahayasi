@@ -1,7 +1,8 @@
  <!-- コメントフォーム -->
   <div class="row mb-3" id="comment-form">
     <div class="col-lg-8 offset-lg-2">
-      <%= form_with model: @comment, url: board_comments_path(@board), local: true do |f| %>
+      <%= form_with  model: Comment.new, url: board_comments_path(@board), data: { turbo_method: :post } do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
         <%= f.label :body %>
         <%= f.text_area :body, class: "form-control mb-3", rows: 4, placeholder: Comment.human_attribute_name(:body) %>
         <%= f.submit t('defaults.post'), class: "btn btn-primary" %>

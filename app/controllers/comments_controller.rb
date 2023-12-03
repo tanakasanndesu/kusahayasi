@@ -1,14 +1,18 @@
 class CommentsController < ApplicationController
   def create
-    comment = current_user.comments.build(comment_params)
-    if comment.save
-      flash[:success] = t('defaults.flash_message.created', item: 'コメント')
-      # /boards/:idのような形で、該当するボードの詳細ページへのパスを生成します。
-      redirect_to board_path(comment.board)
-    else
-      flash[:danger] = t('defaults.flash_message.not_created', item: 'コメント')
-      redirect_to board_path(comment.board), status: :unprocessable_entity
-    end
+    @board = Board.find(params[:board_id])
+    @comment = current_user.comments.build(comment_params)
+    @comment.save
+  end
+
+  def edit; end
+
+  def update; end
+
+  def destroy
+    @comment = current_user.comments.find(params[:id])
+    @board = @comment.board
+    @comment.destroy!
   end
 
   private
