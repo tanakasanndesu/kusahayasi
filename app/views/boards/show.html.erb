@@ -26,14 +26,12 @@
       </article>
     </div>
   </div>
-  <!-- コメントフォーム -->
-  <%= render "comments/form", locals: {board: @board, comment: @comment} %>
-  <!-- コメントエリア -->
+ <%= render 'comments/form', comment: @comment, board: @board %>
   <div class="row">
     <div class="col-lg-8 offset-lg-2">
       <table class="table">
         <tbody id="table-comment">
-          <%= render @comments, locals: {board: @board, comment: @comment} %>
+          <%= render @comments, comment: @comment, board: @board %>
        </tbody>
       </table>
     </div>
