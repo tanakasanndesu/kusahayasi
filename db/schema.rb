@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_24_102316) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_05_100410) do
   create_table "boards", charset: "utf8mb4", force: :cascade do |t|
     t.string "title", null: false
     t.text "body", null: false
@@ -50,6 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_24_102316) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "profile_image"
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

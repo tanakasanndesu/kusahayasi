@@ -60,9 +60,14 @@ ja:
       not_created: "%{item}を作成出来ませんでした"
   bookmarks:
     create:
-      :create_bookmark: ブックマークしました。
+      create_bookmark: ブックマークしました。
     destroy:
-      :destroy_bookmark: ブックマークを外しました。
+      destroy_bookmark: ブックマークを外しました。
+  profiles:
+    update:
+      update_avatar: ユーザーを更新しました
+      no_update_avatar: ユーザーを更新出来ませんでした
+
 
   
   
