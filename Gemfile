@@ -43,18 +43,13 @@ gem "dartsass-rails", "~> 0.4.0"
 # gem "image_processing", "~> 1.2"
 
 gem 'sorcery', "0.16.3"
-
 gem 'rails-i18n'
-
 gem 'draper', '4.0.2'
-
 gem  'carrierwave', '2.2.2'
-
 gem 'turbo-rails', "1.1.1"
-
 gem 'kaminari', "1.2.2"
-
 gem 'bootstrap5-kaminari-views'
+gem 'ransack', "3.2.1"
 
 
 group :development, :test do

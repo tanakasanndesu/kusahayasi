@@ -1,10 +1,12 @@
 class BoardsController < ApplicationController
   before_action :set_board, only: %i[edit update destroy]
+
   def index
     # Boardモデルの全てのインスタンスを取得
     # 各Boardに関連するUserモデルの情報をプリロード
     # 作成日時(created_at)の降順で並べ替え
-    @boards = Board.all.includes(:user).page(params[:page]).per(20)
+    @q = Board.ransack(params[:q])
+    @boards = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def new
@@ -48,13 +50,13 @@ class BoardsController < ApplicationController
   end
 
   def bookmarks
-    @bookmark_boards = current_user.bookmarks_boards.includes(:user).order(created_at: :desc).page(params[:page]).per(20)
+    @q = current_user.bookmarks_boards.ransack(params[:q])
+    @bookmark_boards = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   private
 
   # params.require(:〇〇)permit(:〇〇)は、情報取得する.必要(モデル).許可(カラム)
-
   def set_board
     @board = current_user.boards.find(params[:id])
   end

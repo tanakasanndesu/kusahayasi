@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :bookmarks, only: %i[create edit destroy]
     collection do
       get "bookmarks"
+      get "search"
     end
   end
 end
