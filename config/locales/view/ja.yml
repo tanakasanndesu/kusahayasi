@@ -67,6 +67,17 @@ ja:
     update:
       update_avatar: ユーザーを更新しました
       no_update_avatar: ユーザーを更新出来ませんでした
+  password_resets:
+    new: 
+      title: パスワードリセット申請
+      form: 送信
+    edit:
+      title: パスワードリセット
+    create:
+      password_change: パスワードリセット手順を送信しました
+    update:
+      password_change_success: パスワードの変更に成功しました
+      password_change_false: パスワードの変更に失敗しました
 
 
   

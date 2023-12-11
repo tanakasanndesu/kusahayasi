@@ -50,6 +50,8 @@ gem 'turbo-rails', "1.1.1"
 gem 'kaminari', "1.2.2"
 gem 'bootstrap5-kaminari-views'
 gem 'ransack', "3.2.1"
+gem 'letter_opener_web', '~> 2.0'
+gem 'config'
 
 
 group :development, :test do
