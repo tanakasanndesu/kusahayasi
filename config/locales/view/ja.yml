@@ -55,6 +55,7 @@ ja:
   defaults:
     post: 投稿
     reset: 更新
+    password_reset: パスワードリセット
     flash_message:
       created: "%{item}を作成しました"
       not_created: "%{item}を作成出来ませんでした"
@@ -76,7 +77,7 @@ ja:
     create:
       password_change: パスワードリセット手順を送信しました
     update:
-      password_change_success: パスワードの変更に成功しました
+      password_change_success: パスワードを変更しました
       password_change_false: パスワードの変更に失敗しました
 
 
