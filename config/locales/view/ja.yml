@@ -80,6 +80,8 @@ ja:
       password_change_success: パスワードを変更しました
       password_change_false: パスワードの変更に失敗しました
   admin:
+    not_authenticated: 'ログインしてください'
+    check_admin: '権限がありません'
     user_sessions:
       new:
         title: ログイン
