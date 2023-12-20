@@ -1,0 +1,17 @@
+<% content_for(:title, t('.title')) %>
+  <main class="form-signin w-100 m-auto">
+      <%= render 'shared/flash_message' %>
+    <%= form_with(url: admin_login_path, data: {turbo: false} ) do %>
+      <h1 class="h3 mb-3 fw-normal">ログイン</h1>    
+      <div class="form-floating">
+        <%= text_field_tag :email, nil, class: "form-control", id: "floatingInput", placeholder: "name@example.com" %>
+        <label for="floatingInput">メールアドレス</label>
+      </div>
+      <div class="form-floating">
+        <%= password_field_tag :password, nil, class: "form-control", id: "floatingPassword", placeholder: "Password" %>
+        <label for="floatingPassword">パスワード</label>
+      </div>
+      <%= submit_tag "ログイン", class: "w-100 btn btn-lg btn-primary", data: { turbo: false } %>
+    <% end %>
+    <%= render 'admin/shared/footer'%>
+  </main>

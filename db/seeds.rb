@@ -25,8 +25,13 @@ user_ids =User.ids
     user = User.find(user_ids.sample)
     user.boards.create(title: "タイトル#{index}", body: "本文#{index}")
   end
-  
-  
-  
-  
-  
+ 
+#管理者
+User.create(
+  last_name: Faker::Name.last_name,
+  first_name: Faker::Name.first_name,
+  email: Faker::Internet.unique.email,
+  password: "password",
+  password_confirmation: "password",
+  role: :admin
+)

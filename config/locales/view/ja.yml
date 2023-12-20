@@ -79,6 +79,19 @@ ja:
     update:
       password_change_success: パスワードを変更しました
       password_change_false: パスワードの変更に失敗しました
+  admin:
+    user_sessions:
+      new:
+        title: ログイン
+        login: ログイン
+      create:
+        login_success: ログインしました
+        login_danger: ログインに失敗しました
+      destroy:
+        logout_success: ログアウトしました
+    dashboards:
+      index:
+        title: ダッシュボード
 
 
   

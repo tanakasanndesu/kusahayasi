@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title><%= page_title(yield(:title), admin: true) %></title>
+    <%= stylesheet_link_tag "admin/login" %>
+    <%= javascript_include_tag "admin", "data-turbo-track": "reload", defer: true %>    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.101.0">
+    <title>Signin Template · Bootstrap v5.2</title>
+  </head>
+ <body>
+    <%= yield %>
+</body>
+</html>
