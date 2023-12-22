@@ -55,6 +55,12 @@ ja:
   defaults:
     post: 投稿
     reset: 更新
+    show: 詳細
+    edit: 編集
+    delete: 削除
+    unspecified: 指定なし
+    search_word: 検索ワード
+    delete_confirm: 消去しますか？
     password_reset: パスワードリセット
     flash_message:
       created: "%{item}を作成しました"
@@ -94,6 +100,36 @@ ja:
     dashboards:
       index:
         title: ダッシュボード
+    users:
+      index: 
+        title: ユーザー一覧
+      show:
+        title: ユーザー詳細
+      edit:
+        title: ユーザー編集
+      update:
+        update_user: ユーザーを更新しました
+        no_update_user: ユーザーを更新できませんでした
+      destroy:
+        destroy_user: ユーザーを削除しました
+    boards:
+      index:
+        title: 掲示板一覧
+      show:
+        title: 掲示板詳細
+      edit:
+        title: 掲示板編集
+      update:
+        update_board: 掲示板を更新しました
+        no_update_board: 掲示板を更新できませんでした
+      destroy:
+        destroy_board: 掲示板を削除しました
+  enums:
+    user:
+      role:
+        general: 一般
+        admin: 管理者
+      
 
 
   

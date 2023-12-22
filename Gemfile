@@ -65,7 +65,7 @@ group :development, :test do
   gem "rubocop-checkstyle_formatter"
   gem "rspec-rails"
   gem "rspec_junit_formatter"
-
+  gem 'enum_help'
   gem 'pry-rails'
 end
 

@@ -10,6 +10,13 @@ ja:
         password: パスワード
         avatar: アバター
         password_confirmation: パスワード確認
+        id: 'ID'
+        full_name: 'フルネーム'
+        role: '権限'
+        created_at: '作成日時'
+        title: 'タイトル'
+        create_user: '作成者'
+        body: 本文
       board:
         title: タイトル
         body: 本文
