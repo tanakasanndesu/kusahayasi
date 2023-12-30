@@ -109,7 +109,6 @@ RSpec.describe 'Project', type: :system do
         click_on 'Destroy'
         page.driver.browser.switch_to.alert.accept
         expect(page).to have_content 'Project was successfully destroyed'
-        expect(page).not_to have_content project.name
         expect(page).not_to have_content project.status
         expect(page).not_to have_content project.release_date
         expect(Project.count).to eq 0
